@@ -28,7 +28,7 @@ public class EventDemo : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void  MouseLeftImage()
+    public void  MouseLeftImage()                                                     
     {
         Debug.Log("Mouse left the image!");
         broccoli.localScale = Vector3.one;
