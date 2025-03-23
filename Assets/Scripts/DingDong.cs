@@ -22,7 +22,7 @@ public class DingDong : MonoBehaviour
             t += Time.deltaTime;
             //rotation so it will have to use Quaternion to rotate it
             //Rotation to clockwise
-            transform.Rotate(0, 0, -360 * Time.deltaTime); //1.4 rptation video
+            transform.rotation= Quaternion.Euler(0, 0, -360 * t); //1.4 rptation video
             yield return null;
         }
         
