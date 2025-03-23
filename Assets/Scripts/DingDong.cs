@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class DingDong : MonoBehaviour
 {
+    public UnityEvent onChime; 
     public void Start()
     {
         StartCoroutine(Rotation());
@@ -25,7 +26,7 @@ public class DingDong : MonoBehaviour
             transform.rotation= Quaternion.Euler(0, 0, -360 * t); //1.4 rptation video
             yield return null;
         }
-        
+        onChime.Invoke(); 
     }
 
 
