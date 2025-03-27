@@ -8,7 +8,7 @@ public class Cups : MonoBehaviour
 {
 
     private bool Secret = false;
-
+    private AnimationCurve curve;
 
     void Update()
     {
@@ -18,5 +18,32 @@ public class Cups : MonoBehaviour
         {
             Secret = true;
         }
+    }
+    // text when player clicks
+    public void DisplayAnimatedText(TextMeshPro text)
+    {
+      
+        StartCoroutine(ShowText(text));
+    }
+
+    public IEnumerator ShowText(TextMeshProUGUI text)
+    {
+        float t = 0f;
+        while (t < 0.4f)
+        {
+            t += Time.deltaTime;
+            text.transform.localScale = Vector3.one * curve.Evaluate(t);
+            yield return null;
+        }
+
+        t = 0f;
+        while (t < 0.4f)
+        {
+            t += Time.deltaTime;
+            text.transform.localScale = Vector3.one * curve.Evaluate(t);
+            yield return null;
+        }
+
+        text.gameObject.SetActive(false);
     }
 }

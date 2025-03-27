@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
+
 
 public class Points : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI ScoreText;
     private int score = 0;
     public void UpdateScore()
     {
         score++;
-        scoreText.text = score.ToString();
+        ScoreText.text = score.ToString();
     }
 }
