@@ -7,7 +7,6 @@ public class Rings : MonoBehaviour
 {
     public AnimationCurve curve;
     public float minSize = 0.4f;
-    public float maxSize = 1f;
     public float t;
     private SpriteRenderer sr;
 

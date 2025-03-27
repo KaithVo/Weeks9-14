@@ -8,7 +8,9 @@ public class Cups : MonoBehaviour
 {
 
     private bool Secret = false;
-    private AnimationCurve curve;
+    public AnimationCurve curve;
+
+
 
     void Update()
     {
