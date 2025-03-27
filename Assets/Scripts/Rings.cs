@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 
-public class CoroutineGrower : MonoBehaviour
+public class Rings : MonoBehaviour
 {
     public AnimationCurve curve;
-    public float minSize = 0;
-    public float maxSize = 1;
+    public float minSize = 0.4f;
+    public float maxSize = 1f;
     public float t;
+    private SpriteRenderer sr;
 
-    //Coroutine Based  on video
+
+    void Start()
+    {//have different image everytime mouse click
+     //list
+        sr = GetComponent<SpriteRenderer>();
+    }
+    // using Corounting
     public void StartGrowing()
     {
-        StartCoroutine (Grow());
+        StartCoroutine(Grow());
     }
 
     // Update is called once per frame
@@ -22,10 +30,10 @@ public class CoroutineGrower : MonoBehaviour
         while (t < 1)
         {
             t += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, minSize, curve.Evaluate(t));
             transform.localScale = Vector3.one * maxSize * curve.Evaluate(t);
-            yield return null; 
+            yield return null;
         }
-        }
-        
+    }
+
+
 }

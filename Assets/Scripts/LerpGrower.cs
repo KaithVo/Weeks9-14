@@ -37,3 +37,5 @@ public class LerpGrower : MonoBehaviour
         transform.localScale = Vector3.one * maxSize * curve.Evaluate(t); 
     }
 }
+
+
