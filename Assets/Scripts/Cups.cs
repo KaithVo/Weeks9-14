@@ -10,8 +10,6 @@ public class Cups : MonoBehaviour
     private bool Secret = false;
     public AnimationCurve curve;
 
-
-
     void Update()
     {
         int result = Random.Range(0, 10);
@@ -25,7 +23,7 @@ public class Cups : MonoBehaviour
     public void DisplayAnimatedText(TextMeshPro text)
     {
       
-        StartCoroutine(ShowText(text));
+        StartCoroutine(ShowText());
     }
 
     public IEnumerator ShowText(TextMeshProUGUI text)

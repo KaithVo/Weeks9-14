@@ -29,7 +29,7 @@ public class Rings : MonoBehaviour
         while (t < 1)
         {
             t += Time.deltaTime;
-            transform.localScale = Vector3.one * maxSize * curve.Evaluate(t);
+            transform.localScale = Vector3.one * minSize * curve.Evaluate(t);
             yield return null;
         }
     }
